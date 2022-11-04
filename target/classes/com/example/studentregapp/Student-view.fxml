@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="483.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentregapp.StudentTableController">
+   <children>
+      <Label fx:id="lblTxt" prefHeight="46.0" prefWidth="1031.0" style="-fx-background-color: #14213d;" text="Student Table" textFill="#ffebeb">
+         <font>
+            <Font size="31.0" />
+         </font>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </Label>
+      <HBox prefHeight="53.0" prefWidth="1010.0">
+         <children>
+            <TextField fx:id="txtSearch" alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="361.0" promptText="Search" style="-fx-border-radius: 230; -fx-background-color: #e5e5e5; -fx-background-color: #ade8f4;">
+               <HBox.margin>
+                  <Insets left="5.0" top="12.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </TextField>
+            <ImageView fx:id="img" fitHeight="34.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../imgaes/search (1).png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="17.0" top="11.0" />
+               </HBox.margin>
+            </ImageView>
+            <ComboBox fx:id="cmSelection" prefHeight="25.0" prefWidth="108.0">
+               <HBox.margin>
+                  <Insets left="33.0" top="12.0" />
+               </HBox.margin>
+            </ComboBox>
+            <Button fx:id="btnEli" mnemonicParsing="false" prefHeight="33.0" prefWidth="119.0" text="Eliminate Student" textFill="#43aa8b">
+               <HBox.margin>
+                  <Insets left="40.0" top="12.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Yu Gothic Bold" size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnEdit" mnemonicParsing="false" prefHeight="33.0" prefWidth="92.0" text="Edit Student">
+               <HBox.margin>
+                  <Insets left="40.0" top="12.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btnAdd" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" style="-fx-background-radius: 22;" text="Add">
+               <HBox.margin>
+                  <Insets left="46.0" top="15.0" />
+               </HBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Button fx:id="btnBack" mnemonicParsing="false" text="Back">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets left="20.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <TableView fx:id="taBlView" prefHeight="170.0" prefWidth="1030.0" style="-fx-selection-bar: #9bf6ff; -fx-background-color: transprent;">
+        <columns>
+           <TableColumn fx:id="colName" editable="false" prefWidth="113.0" text="Name">
+              <cellValueFactory>
+                 <PropertyValueFactory property="name" />
+              </cellValueFactory>
+           </TableColumn>
+           <TableColumn fx:id="colAge" prefWidth="30.0" text="Age">
+              <cellValueFactory>
+                 <PropertyValueFactory property="age" />
+              </cellValueFactory>
+           </TableColumn>
+           <TableColumn fx:id="colGender" prefWidth="56.66667175292969" text="Gender">
+              <cellValueFactory>
+                 <PropertyValueFactory property="gender" />
+              </cellValueFactory>
+           </TableColumn>
+           <TableColumn fx:id="colDob" prefWidth="91.33332824707031" text="Date of Birth">
+              <cellValueFactory>
+                 <PropertyValueFactory property="DateOfBirth" />
+              </cellValueFactory>
+           </TableColumn>
+           <TableColumn fx:id="colNRc" prefWidth="148.33334350585938" text="NRC number">
+           <cellValueFactory>
+              <PropertyValueFactory property="NRCNumber" />
+           </cellValueFactory>
+           </TableColumn>
+           <TableColumn fx:id="colClass" minWidth="7.0" prefWidth="122.66665649414062" text="Class">
+              <cellValueFactory>
+                 <PropertyValueFactory property="ClassroomName" />
+              </cellValueFactory>
+           </TableColumn>
+           <TableColumn fx:id="colClmentor" minWidth="0.0" prefWidth="121.0" text=" Class Mentor">
+         <cellValueFactory>
+         <PropertyValueFactory property="MentorName" />
+         </cellValueFactory>
+           </TableColumn>
+           <TableColumn fx:id="colEmail" prefWidth="162.0" text="Email">
+         <cellValueFactory>
+            <PropertyValueFactory property="email" />
+         </cellValueFactory>
+           </TableColumn>
+            <TableColumn fx:id="colAddress" minWidth="12.0" prefWidth="197.6666259765625" text="Address">
+        <cellValueFactory>
+           <PropertyValueFactory property="Address" />
+        </cellValueFactory>
+            </TableColumn>
+        </columns>
+      </TableView>
+      <AnchorPane prefHeight="210.0" prefWidth="1030.0" style="-fx-background-color: #14213d;">
+         <children>
+            <TextField fx:id="txtName" layoutX="7.0" layoutY="67.0" prefHeight="25.0" prefWidth="217.0" promptText="Enter Your Name" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="806.0">
+               <font>
+                  <Font name="Arial Bold Italic" size="13.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtAge" layoutX="11.0" layoutY="111.0" prefHeight="25.0" prefWidth="215.0" promptText="Age" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="804.0">
+               <font>
+                  <Font name="Arial Bold Italic" size="14.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="comClass" layoutX="274.0" layoutY="83.0" prefHeight="40.0" prefWidth="181.0" style="-fx-background-radius: 22; -fx-background-color: #e07a5f;" />
+            <ComboBox fx:id="comMentor" layoutX="548.0" layoutY="84.0" prefHeight="40.0" prefWidth="161.0" style="-fx-background-radius: 22; -fx-background-color: #17c3b2;" />
+            <ComboBox fx:id="comGender" layoutX="425.0" layoutY="143.0" prefHeight="40.0" prefWidth="163.0" style="-fx-background-radius: 22; -fx-background-color: #fed9b7;" />
+            <TextField fx:id="txtNrc" layoutX="798.0" layoutY="74.0" prefHeight="25.0" prefWidth="197.0" promptText="NRC Number">
+               <font>
+                  <Font name="Arial Bold Italic" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtEmail" layoutX="804.0" layoutY="118.0" prefHeight="25.0" prefWidth="197.0" promptText="Email">
+               <font>
+                  <Font name="Arial Bold Italic" size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtAddress" layoutX="805.0" layoutY="166.0" prefHeight="25.0" prefWidth="203.0" promptText="Address">
+               <font>
+                  <Font name="Arial Bold Italic" size="13.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" prefHeight="39.0" prefWidth="1030.0" style="-fx-background-color: #fca311;" text="Registration Form" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="doBirth" layoutX="14.0" layoutY="154.0" prefHeight="29.0" prefWidth="181.0" style="-fx-background-radius: 22; -fx-background-color: #fca311;" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

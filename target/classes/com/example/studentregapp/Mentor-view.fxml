@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="333.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentregapp.MentorController">
+   <children>
+      <ImageView fitHeight="339.0" fitWidth="618.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../imgaes/back-school-accessories-crayons-chalkboard-background-top-view_74952-1633.jpg" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="129.0" prefHeight="17.0" prefWidth="290.0" text="Mentor Add" textFill="#fffbfb">
+         <font>
+            <Font name="Arial Bold Italic" size="28.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfName" layoutY="32.0" prefHeight="25.0" prefWidth="123.0" promptText="Name" />
+      <TextField fx:id="tfFees" layoutX="139.0" layoutY="32.0" prefHeight="25.0" prefWidth="106.0" promptText="Fees" />
+      <TableView fx:id="tbMentor" layoutY="67.0" prefHeight="266.0" prefWidth="399.0">
+        <columns>
+           <TableColumn fx:id="colName" prefWidth="151.0" text="Name">
+              <cellValueFactory><PropertyValueFactory property="Name" />
+              </cellValueFactory>
+           </TableColumn>
+           <TableColumn fx:id="colFees" prefWidth="104.0" text="Fees">
+              <cellValueFactory>
+                 <PropertyValueFactory property="Fees" />
+              </cellValueFactory>
+           </TableColumn>
+           <TableColumn fx:id="colClassroom" prefWidth="143.0" text="Classroom">
+              <cellValueFactory>
+                 <PropertyValueFactory property="classroom"></PropertyValueFactory>
+              </cellValueFactory>
+           </TableColumn>
+        </columns>
+      </TableView>
+      <Button fx:id="BtnBack" layoutX="533.0" layoutY="294.0" mnemonicParsing="false" text="Back" />
+      <Button fx:id="btnSave" layoutX="548.0" layoutY="32.0" mnemonicParsing="false" text="save" />
+      <Button fx:id="btnRemove" layoutX="533.0" layoutY="74.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" text="remove" />
+      <Button fx:id="btnEdit" layoutX="537.0" layoutY="110.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" text="edit" />
+      <ComboBox fx:id="cmbChoice" layoutX="428.0" layoutY="32.0" prefHeight="25.0" prefWidth="92.0" />
+      <ComboBox fx:id="comClass" layoutX="262.0" layoutY="32.0" prefHeight="25.0" prefWidth="138.0" />
+   </children>
+</AnchorPane>
